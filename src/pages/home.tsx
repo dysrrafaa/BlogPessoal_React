@@ -1,4 +1,19 @@
 import React from "react"
+import ReactDOM from 'react-dom';
+
+const Main = () => {
+  return (
+    <div>
+      <App />
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <h1>Hello World!</h1>
+  );
+};
 
 function Home() {
     return (
@@ -15,3 +30,4 @@ function Home() {
   }
   
   export default Home;
+  ReactDOM.render(<Main />, document.getElementById('root'));
