@@ -1,26 +1,48 @@
-import React from 'react'
-import { Grid, Paper } from '@material-ui/core';
-import './Home.css'
+import React from 'react';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-function Home() {
-     return (
-          <>
-               <Grid container spacing={2}>
-                    <Grid item xs={12} sm={8}>
-                         <Paper style={{height: "100vh", background: "lightgrey"}}/>
-                    </Grid>
-                    <Grid item container direction="column" xs={12} sm={4} spacing={2}>
-                         <Grid item>
-                              <Paper style={{height: "50vh", background: "grey"}}/>
-                         </Grid>
-                         <Grid item>
-                              <Paper style={{height: "50vh", background: "grey"}}/>
-                         </Grid>
-                    </Grid>
-               </Grid>
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }),
+);
 
-          </>
-     )
+export default function AutoGrid() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <Paper className={classes.paper}>xs</Paper>
+        </Grid>
+        <Grid item xs>
+          <Paper className={classes.paper}>xs</Paper>
+        </Grid>
+        <Grid item xs>
+          <Paper className={classes.paper}>xs</Paper>
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <Paper className={classes.paper}>xs</Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>xs=6</Paper>
+        </Grid>
+        <Grid item xs>
+          <Paper className={classes.paper}>xs</Paper>
+        </Grid>
+      </Grid>
+    </div>
+  );
 }
-
-export default Home;
