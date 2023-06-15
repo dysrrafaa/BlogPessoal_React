@@ -1,12 +1,20 @@
-import React from 'react'
+import React from "react";
+import './home.css';
+import { Button, Paper } from '@material-ui/core';
+import { Box } from "@mui/material";
 
-const Home: React.FC = () => {
+function Home() {
   return (
-    <div>
-      <h1>Bem Vindo ao meu Blog Pessoal!</h1>
-      <p>Esta é minha página inícial.</p>
+    <div className="container">
+      <Paper className="paper">
+        <h1 >Home</h1>
+        <Box >
+          <Button >
+          </Button>
+        </Box>
+      </Paper>
     </div>
   );
-};
+}
 
 export default Home;

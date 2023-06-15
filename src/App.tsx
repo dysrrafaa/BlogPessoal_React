@@ -1,15 +1,19 @@
-import React from 'react'
+import React from "react"
+import './App.css';
+import Home from "./pages/home";
+import { Grid } from '@material-ui/core'
 
-interface Props {
-  name: string;
-}
+  function App() {
 
-const App: React.FC<Props> = ({ name }) => {
-  return (
-    <div>
-      <h1>Hello, {name}!</h1>
-    </div>
-  );
-};
+    return (
+      <div >
+        <Grid >
+          <Grid >
+            <Home />
+          </Grid>
+        </Grid>
+      </div>
+    )
+  }
 
-export default App;
+export default App
