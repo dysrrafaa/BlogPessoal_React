@@ -1,33 +1,26 @@
-import React from "react"
-import ReactDOM from 'react-dom';
-
-const Main = () => {
-  return (
-    <div>
-      <App />
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <h1>Hello World!</h1>
-  );
-};
+import React from 'react'
+import { Grid, Paper } from '@material-ui/core';
+import './Home.css'
 
 function Home() {
-    return (
-      <div className="home-container">
-        <h1>Bem-vindo à minha página inicial</h1>
-        <p>
-          Nesta página, você encontrará informações sobre meus projetos e
-          habilidades em desenvolvimento de software. Fique à vontade para navegar
-          e entrar em contato comigo se tiver alguma pergunta.
-        </p>
-        <button>Veja meus projetos</button>
-      </div>
-    );
-  }
-  
-  export default Home;
-  ReactDOM.render(<Main />, document.getElementById('root'));
+     return (
+          <>
+               <Grid container spacing={2}>
+                    <Grid item xs={12} sm={8}>
+                         <Paper style={{height: "100vh", background: "lightgrey"}}/>
+                    </Grid>
+                    <Grid item container direction="column" xs={12} sm={4} spacing={2}>
+                         <Grid item>
+                              <Paper style={{height: "50vh", background: "grey"}}/>
+                         </Grid>
+                         <Grid item>
+                              <Paper style={{height: "50vh", background: "grey"}}/>
+                         </Grid>
+                    </Grid>
+               </Grid>
+
+          </>
+     )
+}
+
+export default Home;
