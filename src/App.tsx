@@ -1,19 +1,26 @@
-import React from "react"
 import './App.css';
-import Home from "./pages/home";
-import { Grid } from '@material-ui/core'
+import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
+import Home from './pages/home/home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-  function App() {
+function App() {
 
-    return (
-      <div >
-        <Grid >
-          <Grid >
-            <Home />
-          </Grid>
-        </Grid>
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <div style={{ minHeight: '100vh' }}>
+        <Routes> 
+          // Antigo Switch
+          {/* <Route path="/" element={<Login />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/cadastro" element={<CadastroUsuario />} /> */}
+        </Routes>
       </div>
-    )
-  }
+      <Footer />
+    </BrowserRouter>
+  )
+}
 
 export default App

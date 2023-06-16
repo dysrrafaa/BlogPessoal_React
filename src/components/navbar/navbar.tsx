@@ -1,25 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {AppBar, Toolbar, Typography, Box} from '@material-ui/core';
 
-const Navbar: React.FC = () => {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-};
+function Navbar (){
+    return(
+    <>
+     <AppBar position="static">
+                <Toolbar variant="dense">
+                    <Box style={{ cursor: "pointer" }} >
+                        <Typography variant="h5" color="inherit">
+                            BlogPessoal
+                        </Typography>
+                    </Box>
+
+                    <Box display="flex" justifyContent="start">
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                home
+                            </Typography>
+                        </Box>
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                postagens
+                            </Typography>
+                        </Box>
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                temas
+                            </Typography>
+                        </Box>
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                cadastrar tema
+                            </Typography>
+                        </Box>
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                logout
+                            </Typography>
+                        </Box>
+                    </Box>
+
+                </Toolbar>
+            </AppBar>
+    </>
+    
+    )
+}
 
 export default Navbar;
