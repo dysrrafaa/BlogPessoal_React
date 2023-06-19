@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Grid, Typography, TextField, Button } from '@material-ui/core';
+import {Box} from '@mui/material';
+import { Link } from 'react-router-dom';
 import './login.css';
 
 function Login() {
@@ -37,11 +40,11 @@ function Login() {
         <div className="overlay">
           <div className="overlay-panel overlay-left">
             <h1>Seja Bem Vindo!</h1>
-            <p>Para se manter conectado, faça o login com suas informações pessoais</p>
+            <p>Faça o Login com suas Informações Pessoais.</p>
             <button className="ghost" id="signIn" onClick={handleSignIn}>Entrar</button>
           </div>
           <div className="overlay-panel overlay-right">
-            <h1>Salvee!</h1>
+            <h1>SALVEE!</h1>
             <p>CRIE SUA CONTA AQUI!</p>
             <button className="ghost" id="signUp" onClick={handleSignUp}>Criar</button>
           </div>
