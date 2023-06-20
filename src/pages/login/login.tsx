@@ -1,56 +1,81 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState, useEffect } from 'react';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
-import {Box} from '@mui/material';
-import { Link } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
+import { Box } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+import { Login } from '../../services/service';
+import userlogin from '../../models/userlogin';
 import './login.css';
 
 function Login() {
-  const [isSignUp, setIsSignUp] = useState(false);
+  let navigate = useNavigate();
+  // let history = useHistory(); 
 
-  function handleSignUp() {
-    setIsSignUp(true);
+  const [token, setToken] = useLocalStorage('token');
+  const [userLogin, setUserLogin] = useState<userlogin>(
+
+    {
+      id: 0,
+      usuario: '',
+      senha: '',
+      token: ''
+
+    })
+
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    setUserLogin({
+      ...userLogin,
+      [e.target.name]: e.target.value
+    })
+    console.log(Object.values(userLogin))
   }
 
-  function handleSignIn() {
-    setIsSignUp(false);
+  useEffect(() => {
+    if (token != '') {
+      navigate('/home')
+    }
+  }, [token])
+
+
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    try {
+      await login('/usuarios/logar', userLogin, setToken)
+
+      alert("Usuário Logado com Sucesso!");
+    } catch (error) {
+      alert("Usuário Não Encontrado! Erro ao Logar.");
+    }
   }
 
   return (
-    <div className="container" id="container">
-      <div className={`form-container ${isSignUp ? 'sign-up-container' : 'sign-in-container'}`}>
-        {isSignUp ? (
-          <form action="#">
-            <h2>Criando sua Conta</h2>
-            <input type="text" placeholder="Nome" />
-            <input type="email" placeholder="Email" />
-            <input type="Senha" placeholder="Senha" />
-            <button>Criar</button>
+    <Grid container direction='row' justifyContent='center' alignItems='center'>
+      <Grid alignItems='center' xs={6}>
+        <Box paddingX={20}>
+          <form onSubmit={onSubmit}>
+            <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
+            <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
+            <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+            <Box marginTop={2} textAlign='center'>
+              <Button type='submit' variant='contained' color='primary'>
+                Logar
+              </Button>
+            </Box>
           </form>
-        ) : (
-          <form action="#">
-            <h1>Entrar</h1>
-            <input type="email" placeholder="Email" />
-            <input type="Senha" placeholder="Senha" />
-            <a href="#">Esqueceu a senha?</a>
-            <button>Entrar</button>
-          </form>
-        )}
-      </div>
-      <div className="overlay-container">
-        <div className="overlay">
-          <div className="overlay-panel overlay-left">
-            <h1>Seja Bem Vindo!</h1>
-            <p>Faça o Login com suas Informações Pessoais.</p>
-            <button className="ghost" id="signIn" onClick={handleSignIn}>Entrar</button>
-          </div>
-          <div className="overlay-panel overlay-right">
-            <h1>SALVEE!</h1>
-            <p>CRIE SUA CONTA AQUI!</p>
-            <button className="ghost" id="signUp" onClick={handleSignUp}>Criar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+          <Box display='flex' justifyContent='center' marginTop={2}>
+            <Box marginRight={1}>
+              <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+            </Box>
+            <Link to='/cadastrousuario'>
+              <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+            </Link>
+          </Box>
+        </Box>
+      </Grid>
+      <Grid xs={6} className='imagem'>
+
+      </Grid>
+    </Grid>
   );
 }
 
