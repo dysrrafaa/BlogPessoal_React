@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import './ListaTema.css';
-import Tema from '../../models/Temas'
+import Tema from '../../../models/Temas'
 import useLocalStorage from 'react-use-localstorage'
-import { busca } from '../../services/Service'
+import { busca } from '../../../services/Service'
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
@@ -14,7 +14,7 @@ function ListaTema() {
 
   useEffect(() => {
     if (token == '') {
-      alert("Você precisa estar logado")
+      alert("Você Precisa Estar Logado")
       navigate("/login")
     }
   }, [token])
@@ -51,14 +51,14 @@ function ListaTema() {
                   <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
+                        Atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
-                        deletar
+                        Deletar
                       </Button>
                     </Box>
                   </Link>
