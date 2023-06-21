@@ -1,9 +1,9 @@
 import './App.css'
-import Navbar from './components/navbar/navbar'
-import Footer from './components/footer/footer'
-import Home from './pages/home/home'
-import Login from './pages/login/login'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from './components/static/navbar/Navbar'
+import Login from './pages/login/Login'
+import Home from './pages/home/Home'
+import Footer from './components/static/footer/Footer'
 
 function App() {
 
