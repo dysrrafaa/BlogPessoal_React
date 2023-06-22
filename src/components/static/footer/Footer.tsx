@@ -26,7 +26,7 @@ function Footer() {
                             </a>
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#00000042", height: "00px" }}>
+                    <Box style={{ backgroundColor: "#3b3b3b42", height: "00px" }}>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >Desenvolvido por Rafael Marques - 2023 © Copyright<br></br> Todos os Direitos Reservados.</Typography>
                         </Box>
