@@ -10,7 +10,7 @@ function Footer() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#033b858f", height: "120px" }}>
+                    <Box style={{ backgroundColor: "#ff50508f", height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                             <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Redes Sociais: </Typography>
                         </Box>
@@ -26,7 +26,7 @@ function Footer() {
                             </a>
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#3b3b3b42", height: "00px" }}>
+                    <Box style={{ backgroundColor: "#fd4e4e42", height: "00px" }}>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >Desenvolvido por Rafael Marques - 2023 © Copyright<br></br> Todos os Direitos Reservados.</Typography>
                         </Box>
