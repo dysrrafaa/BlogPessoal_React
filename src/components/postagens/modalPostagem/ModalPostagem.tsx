@@ -6,7 +6,7 @@ import {Box} from '@mui/material';
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalPostagem.css';
 import CadastroPost from '../cadastroPostagem/CadastroPostagem';
-
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function getModalStyle() {
   const top = 50 ;

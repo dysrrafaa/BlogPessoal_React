@@ -1,9 +1,11 @@
 import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import {Typography, Grid } from '@material-ui/core';
-import {Box} from '@mui/material';
+import InstagramIcon from '@material-ui/icons/Instagram'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import { Typography,Box,Grid } from '@material-ui/core';
+import './Footer.css'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokenReducer'
 
 function Footer() {
     return (

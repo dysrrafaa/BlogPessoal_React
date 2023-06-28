@@ -3,6 +3,7 @@ import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
 import './home.css';
 
+
 function Home() {
     return (
         <>

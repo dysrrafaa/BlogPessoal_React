@@ -5,6 +5,7 @@ import './CadastroTema.css';
 import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Temas';
 import { buscaId, post, put } from '../../../services/Service';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 
 function CadastroTema() {

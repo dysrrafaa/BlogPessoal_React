@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import User from '../../models/User'
 import { cadastroUsuario } from '../../services/Service'
 
+
 function CadastroUsuario() {
     const navigate = useNavigate()
     const [confirmarSenha, setConfirmarSenha] = useState<unknown>("")
