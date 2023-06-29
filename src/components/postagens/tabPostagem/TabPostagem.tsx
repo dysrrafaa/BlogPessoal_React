@@ -4,7 +4,6 @@ import {Box} from '@mui/material';
 import { TabContext, TabPanel } from '@material-ui/lab';
 import ListaPostagem from '../listaPostagem/ListaPostagem';
 import './TabPostagem.css';
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function TabPostagem() {
     const [value, setValue] = useState('1')
