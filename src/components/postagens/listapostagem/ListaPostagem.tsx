@@ -7,7 +7,6 @@ import {Box} from '@mui/material';
 import './ListaPostagem.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom'
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
