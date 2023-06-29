@@ -6,7 +6,6 @@ import {useNavigate, useParams } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../services/Service';
-import { TokenState } from '../../../store/tokens/tokenReducer'
 
 function DeletarPostagem() {
     const navigate = useNavigate();
