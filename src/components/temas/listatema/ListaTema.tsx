@@ -6,7 +6,6 @@ import './ListaTema.css';
 import Tema from '../../../models/Temas'
 import useLocalStorage from 'react-use-localstorage'
 import { busca } from '../../../services/Service'
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])

@@ -6,7 +6,6 @@ import {useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Temas';
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function DeletarTema() {
     const navigate = useNavigate();
