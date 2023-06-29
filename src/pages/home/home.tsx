@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Typography, Box, Grid, Button } from '@material-ui/core';
 import './Home.css';
-import ip from '../../assets/images/img_home.png'
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -38,7 +37,6 @@ function Home() {
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src={ip} alt="" width="500px" height="500px" />
                 </Grid>
                 <Grid xs={12} className='postagens'>
                     <TabPostagem />

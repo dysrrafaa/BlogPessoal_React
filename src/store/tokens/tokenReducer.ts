@@ -1,4 +1,4 @@
-import {Action } from './actions';
+import { Action } from './action';
 
 export interface TokenState {
     tokens: string
