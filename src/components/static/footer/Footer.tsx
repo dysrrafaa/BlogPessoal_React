@@ -18,7 +18,6 @@ function Footer() {
     if (token != "") {
 
         footerComponent =
-
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Box className='box1'>
@@ -40,11 +39,10 @@ function Footer() {
                     <Box className='box2'>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2023 Desenvolvido por Rafeal Marques <br/> Todos os Direitos Reservados. </Typography>
+                        </Box>
                     </Box>
-                </Box>
+                </Grid>
             </Grid>
-        </Grid>
-
     }
 
     return (
