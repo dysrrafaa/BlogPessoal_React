@@ -5,6 +5,7 @@ import './CadastroTema.css';
 import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Temas';
 import { buscaId, post, put } from '../../../services/Service';
+import { toast } from 'react-toastify';
 
 function CadastroTema() {
     const navigate = useNavigate();
@@ -16,14 +17,20 @@ function CadastroTema() {
     })
 
     useEffect(() => {
-        if (token == "") {
-
-            alert("Você precisa estar logado")
-            
-            navigate("/login")
-    
+        if (token == ''){
+          toast.error("Você precisa estar logado!", {
+            position: "top-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          navigate("/login")
         }
-    }, [token])
+      }, [token])
 
     useEffect(() =>{
         if(id !== undefined){
@@ -56,7 +63,16 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema Atualizado com Sucesso');
+                toast.success("Tema atualizado com sucesso!", {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                  });
             } else {
                 post(`/temas`, tema, setTema, {
                     headers: {
@@ -64,7 +80,16 @@ function CadastroTema() {
                     }
                 })
 
-                alert('Tema Cadastrado com Sucesso');
+                toast.success("Tema cadastrado com sucesso!", {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                  });
             }
             back()
     

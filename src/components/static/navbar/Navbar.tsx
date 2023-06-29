@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage';
 
 import './Navbar.css'
+import { toast } from 'react-toastify';
 function Navbar() {
     const [token, setToken] = useLocalStorage('token');
     const navigate = useNavigate();
@@ -13,7 +14,16 @@ function Navbar() {
     function goLogout() {
         setToken('')
 
-        alert("Usuário deslogado")
+        toast.info("Usuário deslogado!", {
+            position: "top-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
 
         navigate('/login')
     }

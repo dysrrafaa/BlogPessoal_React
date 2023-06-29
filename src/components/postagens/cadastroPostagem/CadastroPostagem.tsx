@@ -6,6 +6,7 @@ import Tema from '../../../models/Temas';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
     const navigate = useNavigate();
@@ -15,7 +16,16 @@ function CadastroPostagem() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error("Você precisa estar logado!", {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
             navigate("/login")
 
         }
@@ -82,14 +92,32 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success("Postagem atualizada com sucesso!", {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success("Postagem cadastrada com sucesso!", {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
         }
         back()
 
